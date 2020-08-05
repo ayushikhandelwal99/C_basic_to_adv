@@ -22,7 +22,10 @@ int main() {
 	int price[]={1,5,8,9,10,17,17,20};
 	int n=4;
 	
-	printf("%d",RodCut(length,price,n));	
+	printf("%d",RodCut(length,price,n));
+	
+	//hey \
+	kerhu	
 	return 0;
 
 }
