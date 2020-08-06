@@ -1,21 +1,20 @@
 #include<stdio.h>
 #include<limits.h>
-
+int max(int x, int y)
+{
+	return x>y?x:y;
+}
 //find the maximum profit that can be obtained by cutting the rod
 int RodCut(int *length,int *price,int n) {
-	if(n==0)
-	return 0;
-	
-	int max=INT_MIN;
+	int T[n+1]={0};
 	for(int i=1;i<=n;i++)
 	{
-		int cost=price[i-1]+RodCut(length,price,n-i);
-		
-		if(cost>max)
-		max=cost;
+		for(int j=1;j<=i;j++)
+		{
+			T[i]=max(T[i],price[j-1]+T[i-j]);
+		}
 	}
-		
-	return max;
+	return T[n];
 }
 
 int main() {
