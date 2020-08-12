@@ -1,50 +1,58 @@
 #include<iostream>
 #include<stdio.h>
 using namespace std;
-int main()
+void pyramid(int line)
 {
-	int i,j,ch=65,bh=65;
-	for(i=1;i<=5;i++)
+	int i, j, s, t;
+	char ch;
+	t=line;
+	for(i=1;i<=line;i++)
 	{
+		ch='A';
 		for(j=1;j<=i;j++)
 		{
-			printf("%c",ch);
+			cout<<ch;
 			ch++;
 		}
-		for (j = 2; j <= 5-i+1; j++) 
+		for (s = 1; s <= t*2-2; s++) 
       	printf(" ");
+      	ch--;
       	
-      	for (j = 1; j <= 5-i; j++) 
-      	printf(" ");
-      	
-      	for(j=1;j<=i;j++)
+      	for(j=j-2;j>=0;j--)
       	{
-      		printf("%c",bh);
-      		bh--;
+      		cout<<ch;
+      		ch--;
 		}
-		bh=65+i;
+		t--;
 		cout<<"\n";
-		ch=65;
 	}
-	for(i=6;i<=9;i++)
+	t=1;
+	for(i=line-1;i>=1;i--)
 	{
-		bh=65+9-i;
-		for(j=1;j<=10-i;j++)
+		ch='A';
+		for(j=1;j<=i;j++)
 		{
-			printf("%c",ch);
+			cout<<ch;
 			ch++;
 		}
-		for (j = 1; j <=(i-6)*2+2; j++) 
+		for (s = 1; s <= t*2; s++) 
       	printf(" ");
+      	ch--;
       	
-      	for(j=1;j<=10-i;j++)
+      	for(j=j-2;j>=0;j--)
       	{
-		  printf("%c",bh);
-		  bh--;
+      		cout<<ch;
+      		ch--;
 		}
-      	
-      	
+		t++;
 		cout<<"\n";
-		ch=65;
 	}
+}
+int main()
+{
+	int c;
+	cin>>c;
+	pyramid(c);
+	return 0;
+	
 }
