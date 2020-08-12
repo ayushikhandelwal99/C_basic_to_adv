@@ -35,7 +35,7 @@ void pyramid(int line)
 			cout<<ch;
 			ch++;
 		}
-		for (s = 1; s <= t*2; s++) 
+		for (s= 1; s<=t*2;s++) 
       	printf(" ");
       	ch--;
       	
