@@ -12,6 +12,7 @@ int findmincoins(int *C,int n,int amt) {
 	return INT_MAX;
 	
 	int coins=INT_MAX;
+	
 	for(int i=0;i<n;i++)
 	{
 		int res=findmincoins(C,n,amt-C[i]);
@@ -25,7 +26,6 @@ int findmincoins(int *C,int n,int amt) {
 int main() {
 	int C[]={1,2,3,4};
 	int n=sizeof(C)/sizeof(C[0]);
-	
 	int amt=15;
 	
 	printf("%d",findmincoins(C,n,amt));
